@@ -60,8 +60,8 @@ filetype plugin indent on
 "colorscheme evening	"配色方案
 colorscheme desert
 set helplang=cn		"设置中文帮助
-set history=500		"保留历史记录
-set guifont=Monaco:h14	"设置字体为Monaco，大小14
+set history=500
+set guifont=Consolas:h11
 set tabstop=4		"设置tab的跳数
 set expandtab
 set backspace=2 	"设置退格键可用
@@ -83,8 +83,7 @@ set nobackup 		"设置不生成备份文件
 "set go=				"不要图形按钮
 set guioptions-=T           " 隐藏工具栏
 "set guioptions-=m           " 隐藏菜单栏
-set lines=35 columns=118   "设置窗口大小
-winpos 300 0
+au GUIEnter * simalt ~x
  
 "===========================
 "查找/替换相关的设置
