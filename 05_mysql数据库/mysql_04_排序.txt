@@ -1,0 +1,20 @@
+排序
+（１）order by 字段：默认从小到大
+--asc升序排列
+--desc降序排列
+--查询年龄在１８到３４岁之间的男性，按照年龄从小到大排序
+select * from students where (age between 18 and 34) and gender = 1 order by age;
+select * from students where (age between 18 and 34) and gender = 1 order by age asc;
+
+--查询年龄在１８到３４之间的女性，身高从高到矮排序
+select * from students where (age between 18 and 34) and (gender=2) order by height desc;
+
+（２）order by 多个字段：先按前面的条件排序，若相同按后面的条件排序
+--查询年龄在１８到３４岁之间的女性，身高从高到矮排序，如果身高相同的情况下按照年龄从小到大排序
+select * from students where (age between 18 and 34) and (gender = 2) order by height desc, age asc;
+
+--查询年龄在１８到３４岁之间的女性，身高从高到矮排，如果身高相同的情况下按照年龄从小到大排，如果年龄也相同按照id从大到小排
+select * from students where (age between 18 and 34) and (gender = 2) order by height desc, age asc, id desc;
+
+--按照年龄从小到大、身高从高到矮排序
+select * from students order by age asc, height desc;
