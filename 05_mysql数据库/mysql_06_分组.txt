@@ -1,0 +1,20 @@
+分组:与聚合一起使用
+１．group by
+--按照性别分组，查询所有的性别
+select gender from students group by gender;
+
+--计算每种性别的人数
+select gender, count(gender) from students group by gender;
+--计算男性的人数
+select gender, count(*) from students where gender=1 group by gender;
+
+２．group_concat:查询分组中的某种信息
+--查询同种性别中的姓名
+select gender, group_concat(name) from students group by gender;
+
+３．having
+--查询平均年龄超过３０的性别，以及姓名
+select gender, group_concat(name), avg(age) from students group by gender having avg(age)>30;
+
+--查询每种性别种人数多于２个的信息
+select gender, group_concat(name) as 人数 from students group by gender having count(*) > 2;
