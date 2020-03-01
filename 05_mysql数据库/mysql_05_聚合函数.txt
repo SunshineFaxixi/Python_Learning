@@ -1,0 +1,28 @@
+聚合函数
+１．count:总数
+--查询男性有多少人，女性有多少人
+select count(*) as 男性人数 from students where gender=1;
+
+２．max:最大值
+--查询最大的年龄
+select max(age) from students;
+
+--查询女性的最高身高
+select max(height) from students where gender=2;
+
+３. min:最小值
+
+４．sum:求和
+--计算所有人的年龄总和
+select sum(age) from students;
+
+５．avg:平均值
+--计算平均年龄
+select avg(age) from students;
+select sum(age)/count(*) from students;
+
+６．round(a, b): 四舍五入
+--计算所有人的平均年龄，保留２位小数
+select round(sum(age)/count(*), 2) from students;
+--计算男性的平均身高，保留两位小数
+select round(avg(height), 2) from students;
