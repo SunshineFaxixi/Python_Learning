@@ -1,0 +1,101 @@
+查询
+１. 查询所有字段
+--select * from 表名;
+select * from students;
+select * from classes;
+select id, name, from classes;
+
+２．查询指定字段
+--select 列１, 列２...from 表名;
+select name, age from students;
+
+３. 使用as给字段起别名
+--select 字段 as 名字... from 表名;
+select name as 姓名, age as 年龄 from students;
+
+４. --select 表名.字段 ... from 表名;
+select students.name, students.age from students;
+select s.name, s.age from students as s;
+错误：select students.name, students.age from students as s;
+
+５．消除重复行
+--distinct字段
+select distinct gender from students;
+
+６. 条件查询
+（１）比较运算符
+--select ... from 表名 where ...
+--查询大于１８岁的信息
+select * from students where age > 18;
+
+--查询小于１８岁的信息
+select * from students where age < 18;
+
+（２）逻辑运算符
+--１８到２８之间的所有学生信息
+select * from students where age > 18 and age < 28;
+错误：select * from students where age > 18 and < 28;
+
+--１８岁以上的女性
+select * from students from students where age>18 and gender="女"；
+select * from students from students where age>18 and gender=2；
+
+--１８岁以上或者身高超过（包含）１８０以上
+select * from students where age>18 or height>180;
+
+--不在　１８岁以上的女性　这个范围的信息
+select * from students where not (age>18 and gender=2);
+
+--年龄不是小于或者等于１８并且是女性
+select * from students where not (age <= 18) and gender=2;
+
+７．模糊查询
+（１）like: %替换１个或者多个；_替换１个；--效率较低
+
+--查询姓名中以“小”开始的名字
+select name from students where name like "小%";
+
+--查询姓名中有“小”的所有名字
+select name from students where name like "%小%";
+
+--查询有２个字的名字
+select name from students where name like "__";
+
+--查询至少有２个字的名字
+select name from students where name like "__%";
+
+（２）rlike -- 正则
+--查询以“周”开头的名字
+select name from students where name rlike "^周.*";
+
+--查询以“周”开头，以“伦”结尾的名字
+select name from students where name rlike "^周.*伦$";
+
+８．范围查询
+（１）in (1, 3, 8) 表示一个非连续的范围内
+--查询年龄为１８、３４的姓名
+select　name, age from students where age = 18 or age = 34;
+select name, age from students where age in (18, 24);
+
+（２）not in 不非连续的范围之内
+--年龄不是１８、３４之间的信息
+select name, age from students where age not in (18, 34);
+
+（３）between ... and ...表示在一个连续的范围内
+--查询年龄在１８到３４之间的信息
+select name, age from students where age between 18 and 34;
+
+（４）not between ... and ...表示不在一个连续的范围内
+--查询年龄不在１８到２４之间的信息
+select * from students where age not between 18 and 24;
+select * from students where not age between 18 and 24;
+错误：select * from students where age not (between 18 and 24);
+
+（５）空判断
+--判空is null
+--查询身高为空的信息;
+select * from students where height is null;
+select * from students where height is NULL;
+select * from students where height is Null;
+
+--查询身高不为空的信息;
