@@ -1,0 +1,8 @@
+子查询:速度较慢
+
+--查询最高男生的信息
+select * from students where height = (select max(height) from students);
+
+--查询山东省所有的市
+select * from students where pid=(select aid from areas where atitle="河北省");
+
