@@ -1,0 +1,27 @@
+分页
+－－limit start, count
+--限制查询出来的数据个数
+select * from students where gender=1 limit 2;
+
+--查询前５个数据
+select * from students limit 0, 5;
+
+--查询id 6-10（包含）的书序
+select * from students limit 5, 5;
+
+--每页显示２个，第１个页面
+select * from students limit 0, 2;
+
+--每页显示２个，第２个页面
+select * from students limit 2, 2;
+
+--每页显示２个，第３个页面
+select * from students limit 4, 2;
+
+--每页显示２个，第４个页面
+select * from students limit 6, 2; ---> limit　(第n页－１)×每页的个数，每页的个数;
+
+--每页显示２个，显示第６页的信息，按照年龄从小到大排序
+错误：select * from students limit 2*(6-1), 2;　-- 不能计算
+错误：select * from students limit 10, 2 order by age desc; --limit只能放在最后面
+select * from students order by age asc limit 10, 2;
