@@ -1,0 +1,32 @@
+连接
+（１）inner join
+--select ... from 表Ａ inner join 表Ｂ
+select * from students inner join classes;
+
+--查询有能够对应班级的学生以及班级信息
+select * from students inner join classes on students.cls_id=classes.id;
+
+--按照要求显示姓名、班级
+select students.*, classes.name from students inner join classes on students.cls_id=classes.id;
+select students.name, classes.name from students inner join classes on students.cls_id=classes.id;
+select s.name, c.name from students as s inner join classes as c on s.cls_id=c.id; 
+
+--查询有能够对应班级的学生及班级信息，显示学生的所有信息，只显示班级名称
+select s.*, c.name from students as s inner join classes as c on s.cls_id=c.id;
+
+--在以上查询中，将班级姓名显示在第１列
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id;
+
+--查询有能够对应班级的学生以及班级信息，按照班级进行排序
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id order by c.name;
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id order by c.name, s.id asc;
+
+（２）left join
+--查询每位学生对应的信息
+select * from students as s left join classes as c on s.cls_id=c.id;
+
+--查询没有对应班级信息的学生
+select * from students as s left join classes as c on s.cls_id=c.id having c.name is null;
+
+（３）right join
+--将数据表名字互换位置，用left join完成
