@@ -1,0 +1,9 @@
+自关联
+--省级联动
+
+--查询所有的省份
+select * from students where pid is null;
+
+--查询出山东省有哪些市
+select * from areas as province inner join areas as city on city.pid=province.aid having province.atitle="山东省";
+select provinve.atitle, city.atitle from areas as province inner join areas as city on city.pid=province.aid having province.atitle="山东省";
