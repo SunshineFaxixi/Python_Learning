@@ -9,7 +9,7 @@
 # # f-string
 # print(f"Your score is {score}, your height is {height}, your winning is {isWining}")
 
-# age = input("What is your current age?")
+# age = Input("What is your current age?")
 # age_as_int = int(age)
 #
 # years_remaining = 90- age_as_int

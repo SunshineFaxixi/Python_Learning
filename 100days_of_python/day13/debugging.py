@@ -12,22 +12,22 @@
 
 
 # play computer
-# year = int(input("What's your year of birth?"))
+# year = int(Input("What's your year of birth?"))
 # if year > 1980 and year < 1994:
 #     print("You are a millenial.")
 # elif year >= 1994:
 #     print("Your are a Gen z.")
 
 
-# age = int(input("How old are you?"))
+# age = int(Input("How old are you?"))
 # if age > 18:
 #     print("You can drive at age {age}.")
 
 
 # pages = 0
 # word_per_page = 0
-# pages = int(input("Number of pages: "))
-# word_per_page = int(input("Number of words per page: "))
+# pages = int(Input("Number of pages: "))
+# word_per_page = int(Input("Number of words per page: "))
 # total_words = pages * word_per_page
 # print(f"pages = {pages}")
 # print(f"word_per_page = {word_per_page}0

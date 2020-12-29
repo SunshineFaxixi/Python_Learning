@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/day14" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/day17" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/day20_21" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/day22/Pang_Game" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day22/PangGame" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (ai)" jdkType="Python SDK" />
